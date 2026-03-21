@@ -1,7 +1,7 @@
 class Minutes < Formula
   desc "Conversation memory for AI assistants — record, transcribe, search"
   homepage "https://github.com/silverstein/minutes"
-  url "https://github.com/silverstein/minutes.git", tag: "v0.2.0"
+  url "https://github.com/silverstein/minutes.git", tag: "v0.3.0"
   license "MIT"
 
   depends_on "rust" => :build
