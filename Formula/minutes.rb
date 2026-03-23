@@ -1,7 +1,7 @@
 class Minutes < Formula
   desc "Conversation memory for AI assistants — record, transcribe, search"
-  homepage "https://github.com/silverstein/minutes"
-  url "https://github.com/silverstein/minutes.git", tag: "v0.3.0"
+  homepage "https://useminutes.app"
+  url "https://github.com/silverstein/minutes.git", tag: "v0.5.0"
   license "MIT"
 
   depends_on "rust" => :build
@@ -23,7 +23,7 @@ class Minutes < Formula
 
   def post_install
     ohai "Run 'minutes setup --model small' to download the whisper model (~466MB)"
-    ohai "Run 'minutes devices' to check your audio input devices"
+    ohai "Run 'minutes health' to check your system readiness"
   end
 
   test do
