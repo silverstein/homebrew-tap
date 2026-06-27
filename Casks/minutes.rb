@@ -8,7 +8,7 @@ cask "minutes" do
   desc "Privacy-first conversation memory — record, transcribe, search meetings locally"
   homepage "https://useminutes.app/"
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
   depends_on arch: :arm64
 
   app "Minutes.app"
