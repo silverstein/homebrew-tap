@@ -1,6 +1,6 @@
 cask "minutes" do
-  version "0.18.2"
-  sha256 "71b267b411ce77c15e19b97a3cd38ad3c8d7c82e080f1ff1702ce7e39c06fbf9"
+  version "0.24.0"
+  sha256 "d5eafd3b0b5952326800cbe9d82b0662ba72002b5e34e950cdbf6445a87001c6"
 
   url "https://github.com/silverstein/minutes/releases/download/v#{version}/Minutes_#{version}_aarch64.dmg",
       verified: "github.com/silverstein/minutes/"
@@ -8,7 +8,7 @@ cask "minutes" do
   desc "Privacy-first conversation memory — record, transcribe, search meetings locally"
   homepage "https://useminutes.app/"
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
   depends_on arch: :arm64
 
   app "Minutes.app"
