@@ -5,17 +5,13 @@ cask "minutes" do
   url "https://github.com/silverstein/minutes/releases/download/v#{version}/Minutes_#{version}_aarch64.dmg",
       verified: "github.com/silverstein/minutes/"
   name "Minutes"
-  desc "Privacy-first conversation memory — record, transcribe, search meetings locally"
+  desc "Meeting recorder and transcriber that runs on-device"
   homepage "https://useminutes.app/"
 
-  depends_on macos: :big_sur
+  depends_on macos: :sonoma
   depends_on arch: :arm64
 
   app "Minutes.app"
-
-  postflight do
-    system "xattr", "-cr", "#{appdir}/Minutes.app"
-  end
 
   zap trash: [
     "~/.config/minutes",
@@ -23,6 +19,8 @@ cask "minutes" do
   ]
 
   caveats <<~EOS
+    Native call capture (the "Call detected" banner with system audio) needs macOS 15 or newer.
+
     To download a whisper model for transcription:
       minutes setup --model small
 
