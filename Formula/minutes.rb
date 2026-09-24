@@ -65,8 +65,10 @@ class Minutes < Formula
     system(*args)
 
     if sherpa
+      # `stage` already chdirs into the archive's single top-level directory,
+      # so the plugin is at the root here, not under minutes-macos-arm64-sherpa/.
       resource("sherpa-plugin").stage do
-        bin.install "minutes-macos-arm64-sherpa/libminutes_sherpa.dylib"
+        bin.install "libminutes_sherpa.dylib"
       end
     end
   end
