@@ -1,6 +1,6 @@
 cask "minutes" do
-  version "0.27.0"
-  sha256 "392594b7311bc3143861329a38df5465d04e2930cdfa34b50da7ad44ea5ff8ab"
+  version "0.27.1"
+  sha256 "cd70e36b760a77f39161a9c92c611dff50590e0ef138c9be29f6eaf54932c88e"
 
   url "https://github.com/silverstein/minutes/releases/download/v#{version}/Minutes_#{version}_aarch64.dmg"
   name "Minutes"
