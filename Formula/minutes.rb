@@ -1,7 +1,7 @@
 class Minutes < Formula
   desc "Conversation memory for AI assistants — record, transcribe, search"
   homepage "https://useminutes.app"
-  url "https://github.com/silverstein/minutes.git", tag: "v0.30.9"
+  url "https://github.com/silverstein/minutes.git", tag: "v0.30.10"
   license "MIT"
 
   depends_on "cmake" => :build
@@ -23,8 +23,8 @@ class Minutes < Formula
   on_macos do
     on_arm do
       resource "sherpa-plugin" do
-        url "https://github.com/silverstein/minutes/releases/download/v0.30.9/minutes-macos-arm64-sherpa.tar.gz"
-        sha256 "8370e0a81c345f7f8dc15e4fb745ee542762487708f785e27c40523e30e43cd0"
+        url "https://github.com/silverstein/minutes/releases/download/v0.30.10/minutes-macos-arm64-sherpa-shared.tar.gz"
+        sha256 "a84222cea047b77141cb473216570abf4e4eb34e1336fd21a72e901f301656df"
       end
     end
   end
@@ -68,6 +68,10 @@ class Minutes < Formula
       # `stage` already chdirs into the archive's single top-level directory,
       # so the plugin is at the root here, not under minutes-macos-arm64-sherpa/.
       resource("sherpa-plugin").stage do
+        libraries = %w[libsherpa-onnx-c-api.dylib libonnxruntime.dylib]
+        present = libraries.select { |library| File.file?(library) }
+        odie "Incomplete Minutes sherpa runtime" if present.any? && present.length != libraries.length
+        bin.install(*present) unless present.empty?
         bin.install "libminutes_sherpa.dylib"
       end
     end
