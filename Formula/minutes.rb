@@ -1,7 +1,7 @@
 class Minutes < Formula
   desc "Conversation memory for AI assistants — record, transcribe, search"
   homepage "https://useminutes.app"
-  url "https://github.com/silverstein/minutes.git", tag: "v0.30.10"
+  url "https://github.com/silverstein/minutes.git", tag: "v0.31.0"
   license "MIT"
 
   depends_on "cmake" => :build
@@ -23,8 +23,8 @@ class Minutes < Formula
   on_macos do
     on_arm do
       resource "sherpa-plugin" do
-        url "https://github.com/silverstein/minutes/releases/download/v0.30.10/minutes-macos-arm64-sherpa-shared.tar.gz"
-        sha256 "a84222cea047b77141cb473216570abf4e4eb34e1336fd21a72e901f301656df"
+        url "https://github.com/silverstein/minutes/releases/download/v0.31.0/minutes-macos-arm64-sherpa-shared.tar.gz"
+        sha256 "2afb29007b5ce15d4b8103692ef266ce14523c2dab012b8cac73a9585143c53c"
       end
     end
   end
